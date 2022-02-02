@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
+    childprocess (4.1.0)
     parallel (1.21.0)
     parser (3.1.0.0)
       ast (~> 2.4.1)
@@ -20,6 +21,11 @@ GEM
     rubocop-ast (1.15.1)
       parser (>= 3.0.1.1)
     ruby-progressbar (1.11.0)
+    rubyzip (2.3.2)
+    selenium-webdriver (4.1.0)
+      childprocess (>= 0.5, < 5.0)
+      rexml (~> 3.2, >= 3.2.5)
+      rubyzip (>= 1.2.2)
     unicode-display_width (2.1.0)
 
 PLATFORMS
@@ -27,6 +33,7 @@ PLATFORMS
 
 DEPENDENCIES
   rubocop (~> 1.25)
+  selenium-webdriver (~> 4.1)
 
 BUNDLED WITH
    2.2.32
