@@ -44,7 +44,6 @@ class Yandex
         result[:title] = title(element).text
         result[:text]  = text(element).text
       rescue Selenium::WebDriver::Error::NoSuchElementError => e
-        p e
         # don't stop if the element is not there
         # just go to the next one
       end
