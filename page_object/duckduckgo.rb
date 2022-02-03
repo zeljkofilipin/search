@@ -4,9 +4,8 @@ require './page_object/search'
 
 # DuckDuckGo
 class DuckDuckGo < Search
-  def open
-    @driver.get 'https://duckduckgo.com/'
-  end
+
+  # elements
 
   def search_box
     @driver.find_element(css: '#search_form_input_homepage')
@@ -14,6 +13,24 @@ class DuckDuckGo < Search
 
   def search_button
     @driver.find_element(css: '#search_button_homepage')
+  end
+
+  def text(int)
+    @driver.find_element(css: "#r1-#{int} .result__snippet")
+  end
+
+  def title(int)
+    @driver.find_element(css: "#r1-#{int} .result__title a")
+  end
+
+  def url(int)
+    @driver.find_element(css: "#r1-#{int} .result__title a")
+  end
+
+  # functionality
+
+  def open
+    @driver.get 'https://duckduckgo.com/'
   end
 
   def search_results
@@ -30,15 +47,4 @@ class DuckDuckGo < Search
     results
   end
 
-  def text(int)
-    @driver.find_element(css: "#r1-#{int} .result__snippet")
-  end
-
-  def title(int)
-    @driver.find_element(css: "#r1-#{int} .result__title a")
-  end
-
-  def url(int)
-    @driver.find_element(css: "#r1-#{int} .result__title a")
-  end
 end

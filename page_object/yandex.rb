@@ -4,9 +4,8 @@ require './page_object/search'
 
 # Yandex
 class Yandex < Search
-  def open
-    @driver.get 'https://yandex.com/'
-  end
+
+  # elements
 
   def search_box
     @driver.find_element(css: '#text')
@@ -14,6 +13,28 @@ class Yandex < Search
 
   def search_button
     @driver.find_element(css: '.search2__button')
+  end
+
+  def search_results_elements
+    @driver.find_elements(css: '#search-result [data-fast]')
+  end
+
+  def text(parent)
+    parent.find_element(css: '.organic__content-wrapper')
+  end
+
+  def title(parent)
+    parent.find_element(css: '.organic__title')
+  end
+
+  def url(parent)
+    parent.find_element(css: '.organic__url')
+  end
+
+  # functionality
+
+  def open
+    @driver.get 'https://yandex.com/'
   end
 
   def search_results
@@ -35,19 +56,4 @@ class Yandex < Search
     results
   end
 
-  def search_results_elements
-    @driver.find_elements(css: '#search-result [data-fast]')
-  end
-
-  def text(parent)
-    parent.find_element(css: '.organic__content-wrapper')
-  end
-
-  def title(parent)
-    parent.find_element(css: '.organic__title')
-  end
-
-  def url(parent)
-    parent.find_element(css: '.organic__url')
-  end
 end
