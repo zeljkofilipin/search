@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
+browser = ARGV[0].to_sym
+keyword = ARGV[1]
+
 require 'selenium-webdriver'
 require 'webdrivers'
 
-driver = Selenium::WebDriver.for :chrome
+driver = Selenium::WebDriver.for browser
 driver.manage.delete_all_cookies
 
 driver.get 'https://www.bing.com/'
@@ -14,7 +17,7 @@ search_button = driver.find_element(id: 'search_icon')
 wait = Selenium::WebDriver::Wait.new(timeout: 5)
 wait.until { search_button.enabled? }
 
-search_box.send_keys 'filipin'
+search_box.send_keys keyword
 search_button.click
 
 results = []
