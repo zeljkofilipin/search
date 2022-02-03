@@ -30,7 +30,7 @@ driver.find_elements(css: '#b_results li.b_algo').each do |element|
   results << result
 end
 
-require 'pp'
-pp results
+require 'awesome_print'
+ap results
 
 driver.quit
