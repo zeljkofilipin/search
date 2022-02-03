@@ -20,9 +20,9 @@ search_button.click
 
 results = []
 
-driver.find_elements(css: "#search-result [data-fast] .organic__url").each do |element|
+driver.find_elements(css: '#search-result [data-fast] .organic__url').each do |element|
   result = {}
-  result[:url]   = element.attribute('href')
+  result[:url] = element.attribute('href')
   results << result
 end
 

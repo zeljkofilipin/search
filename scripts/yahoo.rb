@@ -23,7 +23,7 @@ search_button.click
 
 results = []
 
-driver.find_elements(css: "h3 [data-matarget]").each do |element|
+driver.find_elements(css: 'h3 [data-matarget]').each do |element|
   result = {}
 
   url = element.attribute('href')
