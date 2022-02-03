@@ -13,9 +13,9 @@ driver.manage.delete_all_cookies
 driver.get 'https://duckduckgo.com/'
 
 search_box = driver.find_element(id: 'search_form_input_homepage')
-search_button = driver.find_element(id: 'search_button_homepage')
-
 search_box.send_keys keyword
+
+search_button = driver.find_element(id: 'search_button_homepage')
 search_button.click
 
 results = []

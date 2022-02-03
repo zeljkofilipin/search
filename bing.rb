@@ -13,9 +13,9 @@ driver.manage.delete_all_cookies
 driver.get 'https://www.bing.com/'
 
 search_box = driver.find_element(id: 'sb_form_q')
-search_button = driver.find_element(id: 'search_icon')
-
 search_box.send_keys keyword
+
+search_button = driver.find_element(id: 'search_icon')
 search_button.click
 
 results = []
