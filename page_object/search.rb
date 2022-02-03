@@ -16,6 +16,10 @@ class Search
     @driver.quit
   end
 
+  def open(url)
+    @driver.get url
+  end
+
   def search(keyword)
     open
     search_box.send_keys keyword

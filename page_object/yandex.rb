@@ -4,7 +4,6 @@ require './page_object/search'
 
 # Yandex
 class Yandex < Search
-
   # elements
 
   def search_box
@@ -34,7 +33,7 @@ class Yandex < Search
   # functionality
 
   def open
-    @driver.get 'https://yandex.com/'
+    super('https://yandex.com/')
   end
 
   def search_results
@@ -55,5 +54,4 @@ class Yandex < Search
 
     results
   end
-
 end

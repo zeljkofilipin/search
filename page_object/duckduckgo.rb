@@ -4,7 +4,6 @@ require './page_object/search'
 
 # DuckDuckGo
 class DuckDuckGo < Search
-
   # elements
 
   def search_box
@@ -30,7 +29,7 @@ class DuckDuckGo < Search
   # functionality
 
   def open
-    @driver.get 'https://duckduckgo.com/'
+    super('https://duckduckgo.com/')
   end
 
   def search_results
@@ -46,5 +45,4 @@ class DuckDuckGo < Search
 
     results
   end
-
 end
