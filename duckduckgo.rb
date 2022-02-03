@@ -24,7 +24,7 @@ results = []
   results << result
 end
 
-require 'pp'
-pp results
+require 'awesome_print'
+ap results
 
 driver.quit
