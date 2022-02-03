@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
+browser = ARGV[0].to_sym
+keyword = ARGV[1]
+
 require 'selenium-webdriver'
 require 'webdrivers'
 
-driver = Selenium::WebDriver.for :chrome
+driver = Selenium::WebDriver.for browser
 driver.manage.delete_all_cookies
 
 driver.get 'https://duckduckgo.com/'
@@ -11,7 +14,7 @@ driver.get 'https://duckduckgo.com/'
 search_box = driver.find_element(id: 'search_form_input_homepage')
 search_button = driver.find_element(id: 'search_button_homepage')
 
-search_box.send_keys 'filipin'
+search_box.send_keys keyword
 search_button.click
 
 results = []
