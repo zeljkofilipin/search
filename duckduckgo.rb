@@ -7,6 +7,7 @@ require 'selenium-webdriver'
 require 'webdrivers'
 
 driver = Selenium::WebDriver.for browser
+driver.manage.timeouts.implicit_wait = 5
 driver.manage.delete_all_cookies
 
 driver.get 'https://duckduckgo.com/'
