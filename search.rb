@@ -18,11 +18,13 @@ duckduckgo_search_results = duckduckgo.search_results
 duckduckgo.search_results_contain_keyword(duckduckgo_search_results, keyword)
 
 # output search results and if they contain the keyword
+puts ''
 puts '-' * 80
 puts 'DuckDuckGo search results and if they contain the keyword'
 puts '-' * 80
 require 'awesome_print'
 ap duckduckgo.urls_and_keywords(duckduckgo_search_results)
+puts ''
 
 # close the browser
 duckduckgo.close
@@ -41,16 +43,20 @@ yandex_search_results = yandex.search_results
 yandex.search_results_contain_keyword(yandex_search_results, keyword)
 
 # output search results and if they contain the keyword
+puts ''
 puts '-' * 80
 puts 'Yandex search results and if they contain the keyword'
 puts '-' * 80
 ap yandex.urls_and_keywords(yandex_search_results)
+puts ''
 
 # output search results that are in both search engines
+puts ''
 puts '-' * 80
 puts 'Search results from both search engines'
 puts '-' * 80
 ap yandex.popular(duckduckgo_search_results, yandex_search_results)
+puts ''
 
 # close the browser
 yandex.close
