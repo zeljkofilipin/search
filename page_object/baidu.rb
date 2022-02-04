@@ -2,7 +2,7 @@
 
 require './page_object/search'
 
-# Bing page object
+# Baidu page object
 class Baidu < Search
   # elements
 

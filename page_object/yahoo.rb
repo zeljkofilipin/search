@@ -2,7 +2,7 @@
 
 require './page_object/search'
 
-# Bing page object
+# Yahoo page object
 class Yahoo < Search
   # elements
 

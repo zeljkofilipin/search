@@ -2,7 +2,7 @@
 
 require './page_object/search'
 
-# Bing page object
+# Google page object
 class Google < Search
   # elements
 
