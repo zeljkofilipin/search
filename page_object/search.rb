@@ -53,4 +53,14 @@ class Search
       search_result_contains_keyword(result, keyword)
     end
   end
+
+  def urls_and_keywords(results)
+    urls_and_keywords = []
+
+    results.each do |e|
+      urls_and_keywords << { url: e[:url], keyword: e[:keyword] }
+    end
+
+    urls_and_keywords
+  end
 end
