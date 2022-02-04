@@ -3,8 +3,17 @@
 browser = :chrome
 keyword = 'croatia'
 
+require './page_object/bing'
+# engine = Bing.new(browser)
+
 require './page_object/duckduckgo'
 # engine = DuckDuckGo.new(browser)
+
+require './page_object/google'
+# engine = Google.new(browser)
+
+require './page_object/yahoo'
+# engine = Yahoo.new(browser)
 
 require './page_object/yandex'
 engine = Yandex.new(browser)
