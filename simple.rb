@@ -3,6 +3,9 @@
 browser = :chrome
 keyword = 'croatia'
 
+require './page_object/baidu'
+# engine = Baidu.new(browser)
+
 require './page_object/bing'
 # engine = Bing.new(browser)
 
