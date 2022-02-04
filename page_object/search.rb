@@ -5,6 +5,7 @@
 class Search
   # open the browser
   def initialize(browser)
+    puts 'ACTION: open browser'
     require 'selenium-webdriver'
     require 'webdrivers'
     driver = Selenium::WebDriver.for browser
@@ -16,11 +17,13 @@ class Search
 
   # close the browser
   def close
+    puts 'ACTION: close browser'
     @driver.quit
   end
 
   # open the url
   def open(url)
+    puts "ACTION: open #{url}"
     @driver.get url
   end
 
@@ -42,7 +45,9 @@ class Search
   # open the page, enter the keywork in the search box, submit
   def search(keyword)
     open
+    puts "ACTION: enter keyword in search box: #{keyword}"
     search_box.send_keys keyword
+    puts 'ACTION: click the search button'
     search_button.click
   end
 
