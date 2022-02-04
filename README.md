@@ -11,7 +11,7 @@ Install dependencies with: `bundle`
 
 ## Usage
 
-Configure `browser` (default `:chrome`) and `keyword` (default: 'croatia') in `search.rb`.
+Configure `browser` (default `:chrome`) and `keyword` (default: `croatia`) in `search.rb`.
 
 Run the script with: `bundle exec ruby search.rb`
 
@@ -25,7 +25,7 @@ Bing was strange. It sometimes returned less than 10 results, even for the same 
 
 Yahoo returned only one search result by default. 5 search results per page appeared after scrolling.
 
-Baidu was all in Chinese. I could not find a way to switch the language.
+Baidu was all in Chinese. I could not find a way to switch the language. It also had a captcha.
 
 Yandex was reasonable easy to automate.
 
