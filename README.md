@@ -5,10 +5,13 @@ Search for a keyword. Get the the first ten results. Get URL, title and descript
 ## Installation
 
 Install [Ruby](https://www.ruby-lang.org/en/). (The script is tested with v3.0.3p157.)
+Install a browser. (Default: Chrome.)
 
 Install dependencies with: `bundle`
 
 ## Usage
+
+Configure `browser` (default `:chrome`) and `keyword` (default: 'croatia') in `search.rb`.
 
 Run the script with: `bundle exec ruby search.rb`
 
