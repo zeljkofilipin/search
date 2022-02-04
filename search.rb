@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
-# configre browser and keyword
+# configure browser
+# tested with `:chrome` and `:firefox`
 browser = :chrome
+
+# configure keyword
 keyword = 'croatia'
 
 # open browser and go to the search engine
