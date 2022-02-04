@@ -32,15 +32,21 @@ class DuckDuckGo < Search
     super('https://duckduckgo.com/')
   end
 
+  def search_result(int)
+    result = {}
+
+    result[:url]   = url(int).attribute('href')
+    result[:title] = title(int).text
+    result[:text]  = text(int).text
+
+    result
+  end
+
   def search_results
     results = []
 
     (0..9).each do |i|
-      result = {}
-      result[:url]   = url(i).attribute('href')
-      result[:title] = title(i).text
-      result[:text]  = text(i).text
-      results << result
+      results << search_result(i)
     end
 
     results

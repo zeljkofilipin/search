@@ -36,20 +36,26 @@ class Yandex < Search
     super('https://yandex.com/')
   end
 
+  def search_result(element)
+    result = {}
+
+    begin
+      result[:url] = url(element).attribute('href')
+      result[:title] = title(element).text
+      result[:text]  = text(element).text
+    rescue Selenium::WebDriver::Error::NoSuchElementError
+      # don't stop if the element is not there
+      # just go to the next one
+    end
+
+    result
+  end
+
   def search_results
     results = []
 
     search_results_elements.each do |element|
-      result = {}
-      begin
-        result[:url] = url(element).attribute('href')
-        result[:title] = title(element).text
-        result[:text]  = text(element).text
-      rescue Selenium::WebDriver::Error::NoSuchElementError
-        # don't stop if the element is not there
-        # just go to the next one
-      end
-      results << result
+      results << search_result(element)
     end
 
     results
