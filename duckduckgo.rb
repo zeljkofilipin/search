@@ -8,7 +8,10 @@ duckduckgo = DuckDuckGo.new(browser)
 
 duckduckgo.search(keyword)
 
+search_results = duckduckgo.search_results
+duckduckgo.search_results_contain_keyword(search_results, keyword)
+
 require 'awesome_print'
-ap duckduckgo.search_results
+ap search_results
 
 duckduckgo.close

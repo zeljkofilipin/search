@@ -8,7 +8,10 @@ yandex = Yandex.new(browser)
 
 yandex.search(keyword)
 
+search_results = yandex.search_results
+yandex.search_results_contain_keyword(search_results, keyword)
+
 require 'awesome_print'
-ap yandex.search_results
+ap search_results
 
 yandex.close

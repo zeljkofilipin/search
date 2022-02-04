@@ -25,4 +25,20 @@ class Search
     search_box.send_keys keyword
     search_button.click
   end
+
+  def search_result_contains_keyword(result, keyword)
+    has_keyword = false
+
+    result.each do |_k, v|
+      has_keyword = true if v.downcase.include?(keyword)
+    end
+
+    result[:keyword] = has_keyword
+  end
+
+  def search_results_contain_keyword(results, keyword)
+    results.each do |result|
+      search_result_contains_keyword(result, keyword)
+    end
+  end
 end
