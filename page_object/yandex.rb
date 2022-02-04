@@ -2,7 +2,7 @@
 
 require './page_object/search'
 
-# Yandex
+# Yandex page object
 class Yandex < Search
   # elements
 
@@ -36,6 +36,8 @@ class Yandex < Search
     super('https://yandex.com/')
   end
 
+  # put each search result in a separate hash
+  # return the hash
   def search_result(element)
     result = {}
 
@@ -51,6 +53,8 @@ class Yandex < Search
     result
   end
 
+  # get search results from the page
+  # return array of hashes containing search results
   def search_results
     results = []
 

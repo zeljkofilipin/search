@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
-# Search
+# base page object
+# contains all common functionality
 class Search
+  # open the browser
   def initialize(browser)
     require 'selenium-webdriver'
     require 'webdrivers'
@@ -12,14 +14,18 @@ class Search
     @driver = driver
   end
 
+  # close the browser
   def close
     @driver.quit
   end
 
+  # open the url
   def open(url)
     @driver.get url
   end
 
+  # compare search results from two search engines
+  # return array with urls that are present in both results
   def popular(results1, results2)
     popular = []
 
@@ -32,12 +38,17 @@ class Search
     popular
   end
 
+  # perform search
+  # open the page, enter the keywork in the search box, submit
   def search(keyword)
     open
     search_box.send_keys keyword
     search_button.click
   end
 
+  # check if url, title or description of one result contain the keyword
+  # add `:keyword` to the hash with value `true` or `false`
+  # return the hash
   def search_result_contains_keyword(result, keyword)
     has_keyword = false
 
@@ -48,12 +59,19 @@ class Search
     result[:keyword] = has_keyword
   end
 
+  # iterate over all results
+  # check if url, title or description contain the keyword
+  # return the modified hash with a new key `:keyword` with value `true` or `false`
   def search_results_contain_keyword(results, keyword)
     results.each do |result|
       search_result_contains_keyword(result, keyword)
     end
   end
 
+  # create a new array of hashes
+  # it contains only `:url` and `:keyword` keys
+  # suitable for outputing to the screen
+  # return the array
   def urls_and_keywords(results)
     urls_and_keywords = []
 

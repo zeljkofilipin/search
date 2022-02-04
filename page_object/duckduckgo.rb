@@ -2,7 +2,7 @@
 
 require './page_object/search'
 
-# DuckDuckGo
+# DuckDuckGo page object
 class DuckDuckGo < Search
   # elements
 
@@ -32,6 +32,8 @@ class DuckDuckGo < Search
     super('https://duckduckgo.com/')
   end
 
+  # put each search result in a separate hash
+  # return the hash
   def search_result(int)
     result = {}
 
@@ -42,6 +44,8 @@ class DuckDuckGo < Search
     result
   end
 
+  # get search results from the page
+  # return array of hashes containing search results
   def search_results
     results = []
 
