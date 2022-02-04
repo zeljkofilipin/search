@@ -2,7 +2,19 @@
 
 Search for a keyword. Get the the first ten results. Get URL, title and description of each of the results.
 
-According to [Wikipedia](https://en.wikipedia.org/wiki/Search_engine#Market_share), the most popular search engines are Google (92% market share), Bing (3%), Yahoo (2%), Baidu (1%), Yandex (1%) and DuckDuckGo (1%).
+## Installation
+
+Install [Ruby](https://www.ruby-lang.org/en/). (The script is tested with v3.0.3p157.)
+
+Install dependencies with: `bundle`
+
+## Usage
+
+Run the script with: `bundle exec ruby search.rb`
+
+## Search Engines
+
+According to [Wikipedia](https://en.wikipedia.org/wiki/Search_engine#Market_share), the most popular search engines are [Google](https://www.google.com/) (92% market share), [Bing](https://www.bing.com/) (3%), [Yahoo](https://www.yahoo.com/) (2%), [Baidu](https://www.baidu.com/) (1%), [Yandex](https://yandex.com/) (1%) and [DuckDuckGo](https://duckduckgo.com/) (1%).
 
 Google search results page always returned 10 search results, but it was surprisingly hard to parse. I didn't see any obvious was to find results. I could find URL and related title and I could find description, but separately. I could not find a good way to find all three.
 
@@ -15,3 +27,5 @@ Baidu was all in Chinese. I could not find a way to switch the language.
 Yandex was reasonable easy to automate.
 
 DuckDuckGo was the easiest to automate. It always returned 10 results and it was easy to get the data.
+
+I have decided to automate Yandex and DuckDuckGo.
