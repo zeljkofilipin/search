@@ -26,4 +26,6 @@ yandex.search_results_contain_keyword(yandex_search_results, keyword)
 
 ap yandex_search_results
 
+ap yandex.popular(duckduckgo_search_results, yandex_search_results)
+
 yandex.close

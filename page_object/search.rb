@@ -20,6 +20,18 @@ class Search
     @driver.get url
   end
 
+  def popular(results1, results2)
+    popular = []
+
+    results1.each do |v1|
+      results2.each do |v2|
+        popular << v2[:url] if v1[:url] == v2[:url]
+      end
+    end
+
+    popular
+  end
+
   def search(keyword)
     open
     search_box.send_keys keyword
