@@ -30,6 +30,7 @@ class Search
   # compare search results from two search engines
   # return array with urls that are present in both results
   def popular(results1, results2)
+    puts 'ACTION: get search results that are present in both search engines'
     popular = []
 
     results1.each do |v1|
@@ -68,6 +69,7 @@ class Search
   # check if url, title or description contain the keyword
   # return the modified hash with a new key `:keyword` with value `true` or `false`
   def search_results_contain_keyword(results, keyword)
+    puts 'ACTION: check if url, title or description contain the keyword'
     results.each do |result|
       search_result_contains_keyword(result, keyword)
     end

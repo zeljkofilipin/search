@@ -47,6 +47,7 @@ class DuckDuckGo < Search
   # get search results from the page
   # return array of hashes containing search results
   def search_results
+    puts 'ACTION: get search results (url, title, text)'
     results = []
 
     (0..9).each do |i|
